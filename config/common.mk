@@ -4,7 +4,7 @@ $(call inherit-product-if-exists, vendor/extra/product.mk)
 # Allow vendor prebuilt repos to exclude themselves from bp scanning
 -include $(sort $(wildcard vendor/*/*/exclude-bp.mk))
 
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= NovaLine
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -267,3 +267,7 @@ include vendor/lineage/config/version.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/lineage/config/partner_gms.mk
+
+ifeq ($(WITH_GAPPS), true)
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+endif
