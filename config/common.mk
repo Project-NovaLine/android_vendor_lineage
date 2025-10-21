@@ -170,6 +170,12 @@ PRODUCT_PACKAGES += \
     LMOFreeform \
     LMOFreeformSidebar
 
+# Packages
+PRODUCT_PACKAGES += \
+    GameSpace \
+    OmniJaws \
+    ColumbusService
+
 PRODUCT_ARTIFACT_PATH_REQUIREMENT_ALLOWED_LIST += \
     system/bin/curl \
     system/bin/getcap \
