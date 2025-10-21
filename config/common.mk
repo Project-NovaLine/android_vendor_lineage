@@ -354,4 +354,8 @@ include vendor/lineage/config/version.mk
 
 ifeq ($(WITH_GAPPS), true)
 $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+
+# Don't dexpreopt prebuilts. (For GMS).
+DONT_DEXPREOPT_PREBUILTS := true
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 endif
